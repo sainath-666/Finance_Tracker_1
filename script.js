@@ -1,10 +1,10 @@
 // DOM Elements
-const form = document.getElementById('transactionForm');
-const totalIncomeCard = document.getElementById('totalIncome');
-const totalExpensesCard = document.getElementById('totalExpenses');
-const netBalanceCard = document.getElementById('netBalance');
-const reportBody = document.getElementById('reportBody');
-const ctx = document.getElementById('incomeExpenseChart').getContext('2d');
+const form = document.getElementById("transactionForm");
+const totalIncomeCard = document.getElementById("totalIncome");
+const totalExpensesCard = document.getElementById("totalExpenses");
+const netBalanceCard = document.getElementById("netBalance");
+const reportBody = document.getElementById("reportBody");
+const ctx = document.getElementById("incomeExpenseChart").getContext("2d");
 
 // Data Tracking
 let totalIncome = 0;
@@ -12,14 +12,14 @@ let totalExpenses = 0;
 
 // Chart.js Initialization
 let incomeExpenseChart = new Chart(ctx, {
-  type: 'pie',
+  type: "pie",
   data: {
-    labels: ['Income', 'Expenses'],
+    labels: ["Income", "Expenses"],
     datasets: [
       {
-        label: 'Finance Data',
+        label: "Finance Data",
         data: [0, 0],
-        backgroundColor: ['#4caf50', '#f44336'],
+        backgroundColor: ["#4caf50", "#f44336"],
         borderWidth: 1,
       },
     ],
@@ -41,31 +41,31 @@ function updateDashboard() {
 }
 
 // Handle Form Submission
-form.addEventListener('submit', (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   // Get Form Data
-  const date = document.getElementById('date').value;
-  const description = document.getElementById('description').value;
-  const category = document.getElementById('category').value;
-  const amount = parseFloat(document.getElementById('amount').value);
+  const date = document.getElementById("date").value;
+  const description = document.getElementById("description").value;
+  const category = document.getElementById("category").value;
+  const amount = parseFloat(document.getElementById("amount").value);
 
   if (!date || !description || !category || isNaN(amount)) return;
 
   // Update Income or Expense
-  if (category === 'income') {
+  if (category === "income") {
     totalIncome += amount;
   } else {
     totalExpenses += amount;
   }
 
   // Add to Reports Table
-  const row = document.createElement('tr');
+  const row = document.createElement("tr");
   row.innerHTML = `
     <td>${date}</td>
     <td>${description}</td>
     <td>${category.charAt(0).toUpperCase() + category.slice(1)}</td>
-    <td>${category === 'income' ? `$${amount}` : `-$${amount}`}</td>
+    <td>${category === "income" ? `$${amount}` : `-$${amount}`}</td>
   `;
   reportBody.appendChild(row);
 
