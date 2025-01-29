@@ -233,3 +233,32 @@ canvas {
 .section {
   animation: fadeIn 1s ease-out;
 }
+
+/* Footer */
+.footer {
+  background-color: #2575fc;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffcc00;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}

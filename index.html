@@ -20,16 +20,16 @@
       </div>
     </nav>
 
-    <!-- Form Section -->
-    <section id="input-form" class="section">
+    <!-- Input Form Section -->
+    <section id="input-form">
       <div class="container">
-        <h2>Add Income/Expense</h2>
+        <h2>Enter Transaction</h2>
         <form id="transactionForm">
           <label for="date">Date:</label>
           <input type="date" id="date" required />
 
           <label for="description">Description:</label>
-          <input type="text" id="description" placeholder="e.g., Salary, Groceries" required />
+          <input type="text" id="description" required />
 
           <label for="category">Category:</label>
           <select id="category" required>
@@ -38,7 +38,7 @@
           </select>
 
           <label for="amount">Amount:</label>
-          <input type="number" id="amount" placeholder="e.g., 500" required />
+          <input type="number" id="amount" required />
 
           <button type="submit">Add Transaction</button>
         </form>
@@ -50,9 +50,9 @@
       <div class="container">
         <h2>Dashboard</h2>
         <div class="overview-cards">
-          <div class="card" id="totalIncome">Total Income: $0</div>
-          <div class="card" id="totalExpenses">Total Expenses: $0</div>
-          <div class="card" id="netBalance">Net Balance: $0</div>
+          <div class="card" id="totalIncome">Total Income: $5000</div>
+          <div class="card" id="totalExpenses">Total Expenses: $3000</div>
+          <div class="card" id="netBalance">Net Balance: $2000</div>
         </div>
         <canvas id="incomeExpenseChart" width="400" height="200"></canvas>
       </div>
@@ -72,11 +72,21 @@
             </tr>
           </thead>
           <tbody id="reportBody">
-            <!-- Transactions will appear here -->
+            <!-- Transaction data will be added here -->
           </tbody>
         </table>
       </div>
     </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Sainathreddy Nerusupalli | 
+          <a href="https://www.linkedin.com/in/sainath666" target="_blank">LinkedIn</a> | 
+          <a href="https://github.com/sainath-666" target="_blank">GitHub</a>
+        </p>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>
