@@ -5,6 +5,8 @@ const totalExpensesCard = document.getElementById("totalExpenses");
 const netBalanceCard = document.getElementById("netBalance");
 const reportBody = document.getElementById("reportBody");
 const ctx = document.getElementById("incomeExpenseChart").getContext("2d");
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
 
 // Data Tracking
 let totalIncome = 0;
@@ -39,6 +41,18 @@ function updateDashboard() {
   incomeExpenseChart.data.datasets[0].data = [totalIncome, totalExpenses];
   incomeExpenseChart.update();
 }
+
+// Mobile Navigation Toggle
+navToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+// Close mobile menu when clicking on a link
+navLinks.addEventListener("click", (e) => {
+  if (e.target.tagName === "A") {
+    navLinks.classList.remove("active");
+  }
+});
 
 // Handle Form Submission
 form.addEventListener("submit", (e) => {
